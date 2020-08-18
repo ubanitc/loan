@@ -6,16 +6,23 @@ $dbname = "heroku_a04909d9b1187cf";
 
 $dsn = ("mysql:host=".$host.";dbname=".$dbname);
 
-
-   $dang = $pdo = new pdo($dsn,$username,$password);
+try{
+    $pdo = new pdo($dsn,$username,$password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    
-    if($dang){
-       echo "connection succesful";
-    }else{ 
-        echo "not connected";
-    }
+
+}catch(PDOException $e){
+        echo "connection error:".$e->getMessage();
+}
 
 
+if($pdo){
+    echo "connection succesful";
+}else{
+    echo "could not connect";
+}
+
+
+
+echo "will this work?" ;
 ?>
