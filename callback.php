@@ -18,7 +18,7 @@ try{
    
 
 $sql = ""SELECT * FROM blockchain;
-$stmt = query->($sql);
+$stmt = $pdo->query($sql);
 $this = $stmt->fetchAll();
 
 var_dump($this);
