@@ -16,9 +16,9 @@ try{
 }
 
    
-$transaction_hash = $_GET['transaction_hash'];
-$value_in_satoshi = $_GET['value'];
-$address = $_GET['invoice'];
+$transaction_hash = isset($_GET['transaction_hash']);
+$value_in_satoshi = isset($_GET['value']);
+$address = isset($_GET['invoice']);
 
 
 
