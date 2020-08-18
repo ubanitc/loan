@@ -16,22 +16,22 @@ try{
 }
 
    
+$transaction_hash = $_GET['transaction_hash'];
+$value_in_satoshi = $_GET['value'];
+$value_in_btc = $value_in_satoshi / 100000000;
 
 
-$sql = "SELECT * FROM blockchain";
-$stmt = $pdo->query($sql);
 
-$thise = $stmt->fetchAll();
 
-foreach($thise as $thiss){
-    echo $thiss->address;
-    
+
+//Add the invoice to the database
+$stmt = $pdo->prepare("INSERT INTO blockchain (address, userid) values(?, ?)");
+$stmt->execute($transaction_hash, $value_in_btc);
+
+if($stmt->execute()) {
+   echo "*ok*";
 }
 
 
-
-$sql = "INSERT INTO blockchain (address, userid) VALUES (?,?)";
-$stmt = $pdo->prepare($sql);
-$stmt->execute(['monkey','baboon']);
 ?>
 
