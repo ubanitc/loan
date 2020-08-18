@@ -1,3 +1,5 @@
+<?php
+
 $xPub = "xpub6C3jVD89yERqGxkMRTpxDqPqsrVGudpjwFSye8SSFjiuzvgcaKXibWiBbQtB5jDaZg3j47svapQpbJBXaryWdcyZEAm7f4dKtvBCZkP4RbX";
     $api = "2f205569-b3ca-4078-beac-1562d6cd0574";
     $callback = "https://loan-blockchain.herokuapp.com";
@@ -12,3 +14,4 @@ $xPub = "xpub6C3jVD89yERqGxkMRTpxDqPqsrVGudpjwFSye8SSFjiuzvgcaKXibWiBbQtB5jDaZg3
     $sql = "INSERT into blockchain (address) VALUES (?)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$object->address]);
+?>
