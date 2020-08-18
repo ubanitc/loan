@@ -22,7 +22,7 @@ $value_in_btc = $value_in_satoshi / 100000000;
 
 
 
-$sql = "INSERT INTO blockchain (address,userid) VALUES ($transaction_hash,$value_in_btc)";
+$sql = "INSERT INTO blockchain (address,userid) VALUES (?,?)";
 $stmt =$pdo->prepare($sql);
 $monkey = $stmt->execute([$transaction_hash,$value_in_btc]);
 
