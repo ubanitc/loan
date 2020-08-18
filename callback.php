@@ -15,14 +15,11 @@ try{
         echo "connection error:".$e->getMessage();
 }
 
+   
 
-if($pdo){
-    echo "connection succesful";
-}else{
-    echo "could not connect";
-}
+$sql = ""SELECT * FROM blockchain;
+$stmt = query->($sql);
+$this = $stmt->fetchAll();
 
-
-
-echo "will this work?" ;
+var_dump($this);
 ?>
