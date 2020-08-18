@@ -22,6 +22,6 @@ $stmt = $pdo->query($sql);
 $this = $stmt->fetchAll();
 
 foreach($this as $thiss){
-    echo "$thiss";
+    echo $thiss->address;
 }
 ?>
