@@ -18,13 +18,18 @@ try{
    
 $transaction_hash = $_GET['transaction_hash'];
 $value_in_satoshi = $_GET['value'];
+$address = $_GET['address'];
+$confs = $_GET['confirmations'];
+
+
+
 $value_in_btc = $value_in_satoshi / 100000000;
 
 
 
-$sql = "INSERT INTO blockchain (address,userid) VALUES (?,?)";
+$sql = "INSERT INTO blockchain (address,amount,confs,userid) VALUES (?,?,?,?)";
 $stmt =$pdo->prepare($sql);
-$monkey = $stmt->execute([$transaction_hash,$value_in_btc]);
+$monkey = $stmt->execute([$address,$value_in_btc,$confs,$transaction_hash]);
 
 
 if($monkey) {
