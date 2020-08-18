@@ -2,7 +2,7 @@
     $host = "us-cdbr-east-02.cleardb.com";
 $username = "bd698371ac76ff";
 $password = "2d522430";
-$dbname = "heroku_a04909d9b1187cf";
+$dbname = "heroku_cdd723afa6c6aef";
 
 $dsn = ("mysql:host=".$host.";dbname=".$dbname);
 
