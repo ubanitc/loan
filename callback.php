@@ -19,7 +19,9 @@ try{
 
 $sql = "SELECT * FROM blockchain";
 $stmt = $pdo->query($sql);
-$this = $stmt->fetch();
+$this = $stmt->fetchAll();
 
-print_r($this);
+foreach($this as $thiss){
+    echo "$thiss";
+}
 ?>
