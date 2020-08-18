@@ -17,11 +17,13 @@ try{
 
    
 
+
 $sql = "SELECT * FROM blockchain";
 $stmt = $pdo->query($sql);
-$this = $stmt->fetchall();
 
-foreach($this as $thiss){
+$thise = $stmt->fetchAll();
+
+foreach($thise as $thiss){
     echo $thiss->address;
 }
 ?>
