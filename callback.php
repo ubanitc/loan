@@ -16,9 +16,9 @@ try{
 }
 
    
-$value_in_satoshi = isset($_GET['value']);
-$transaction_hash = isset($_GET['transaction_hash']);
-$invoice_id = isset($_GET['invoice_id']); //invoice_id is passed back to the callback URL
+$value_in_satoshi = $_GET['value'];
+$transaction_hash = $_GET['transaction_hash'];
+$invoice_id = $_GET['invoice_id']; //invoice_id is passed back to the callback UL
 
 $value_in_btc = $value_in_satoshi / 100000000;
 
