@@ -25,5 +25,13 @@ $thise = $stmt->fetchAll();
 
 foreach($thise as $thiss){
     echo $thiss->address;
+    
 }
+
+
+
+$sql = "INSERT INTO blockchain (address, userid) VALUES (?,?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(['monkey','baboon']);
 ?>
+
